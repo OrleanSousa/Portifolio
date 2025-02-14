@@ -21,7 +21,7 @@ import certificado16 from '../../../public/assets/UC-d9734804-fd93-43b3-935a-c20
 import certificado17 from '../../../public/assets/UC-dc94610b-9c84-4e0a-9db6-478ec743fdfd-git-e-github.pdf';
 import certificado18 from '../../../public/assets/UC-e2d7fe93-f24d-4fc1-9efb-b53159804d41-computação-na-nuvem.pdf';
 
-const Certificados = () => {
+const Certificados: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const certificados = [
@@ -117,11 +117,11 @@ const Certificados = () => {
     },
   ];
 
-  const nextSlide = () => {
+  const nextSlide = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % certificados.length);
   };
 
-  const prevSlide = () => {
+  const prevSlide = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + certificados.length) % certificados.length);
   };
 
