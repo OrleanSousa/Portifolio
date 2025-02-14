@@ -1,4 +1,4 @@
-import Project1Img from '../../assets/image-2.jfif'
+import Project1Img from '../../../public/assets/image-2.jfif'
 
 const Project = () => {
     return (

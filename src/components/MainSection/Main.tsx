@@ -1,6 +1,6 @@
 import { BsFacebook, BsLinkedin, BsInstagram } from "react-icons/bs"
 import { FaGithub } from "react-icons/fa"
-import PicturePerfil from '../../assets/foto1.jpg'
+import PicturePerfil from '../../../public/assets/foto1.jpg'
 
 
 const Main = () => {
