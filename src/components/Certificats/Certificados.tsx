@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -12,6 +12,7 @@ const Certificados: React.FC = () => {
 
   const [certificados, setCertificados] = useState<Certificado[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchCertificados = async () => {
@@ -21,7 +22,6 @@ const Certificados: React.FC = () => {
           throw new Error('Erro ao carregar JSON');
         }
         const data = await response.json();
-        console.log('Certificados carregados:', data);
         setCertificados(data);
       } catch (error) {
         console.error('Erro ao carregar certificados:', error);
@@ -39,6 +39,20 @@ const Certificados: React.FC = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + certificados.length) % certificados.length);
   };
 
+  const openModal = (): void => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = (): void => {
+    setModalIsOpen(false);
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   if (certificados.length === 0) {
     return <p>Carregando certificados...</p>;
   }
@@ -54,7 +68,7 @@ const Certificados: React.FC = () => {
           <div className="text-center transition duration-500 ease-in-out">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">{currentCertificado.title}</h2>
             
-            <div className="w-full h-full lg:h-96 rounded-lg shadow-md mb-4 overflow-hidden">
+            <div className="w-full h-64 lg:h-96 rounded-lg shadow-md mb-4 overflow-hidden cursor-pointer" onClick={openModal}>
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
                 <Viewer
                   fileUrl={currentCertificado.pdf}
@@ -82,6 +96,28 @@ const Certificados: React.FC = () => {
           <AiOutlineRight size={24} />
         </button>
       </div>
+
+      {/* Modal */}
+      {modalIsOpen && (
+        <div 
+          className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50" 
+          onClick={handleOverlayClick}
+        >
+          <div className="relative w-full max-w-4xl h-4/5 bg-white rounded-2xl shadow-xl overflow-hidden p-6">
+            <button onClick={closeModal} className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full shadow-md hover:bg-red-700 transition">
+              Fechar
+            </button>
+            <div className="w-full h-full flex justify-center items-center mt-[40px]">
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                <Viewer
+                  fileUrl={currentCertificado.pdf}
+                  defaultScale={0.5}
+                />
+              </Worker>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
