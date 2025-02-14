@@ -13,6 +13,7 @@ const Certificados: React.FC = () => {
   const [certificados, setCertificados] = useState<Certificado[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const fetchCertificados = async () => {
@@ -31,6 +32,16 @@ const Certificados: React.FC = () => {
     fetchCertificados();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 640);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const nextSlide = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % certificados.length);
   };
@@ -40,7 +51,9 @@ const Certificados: React.FC = () => {
   };
 
   const openModal = (): void => {
-    setModalIsOpen(true);
+    if (!isSmallScreen) {
+      setModalIsOpen(true);
+    }
   };
 
   const closeModal = (): void => {
@@ -72,7 +85,7 @@ const Certificados: React.FC = () => {
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
                 <Viewer
                   fileUrl={currentCertificado.pdf}
-                  defaultScale={0.3}
+                  defaultScale={isSmallScreen ? 0.2 : 0.3}
                 />
               </Worker>
             </div>
