@@ -7,7 +7,7 @@ const Certificados: React.FC = () => {
   interface Certificado {
     title: string;
     pdf: string;
-    description: string;
+    id: number;
   }
 
   const [certificados, setCertificados] = useState<Certificado[]>([]);
@@ -83,14 +83,12 @@ const Certificados: React.FC = () => {
             
             <div className="w-full h-64 lg:h-96 rounded-lg shadow-md mb-4 overflow-hidden cursor-pointer" onClick={openModal}>
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-                <Viewer
-                  fileUrl={currentCertificado.pdf}
-                  defaultScale={isSmallScreen ? 0.2 : 0.3}
-                />
+              <Viewer
+                fileUrl={currentCertificado.pdf}
+                defaultScale={currentCertificado.id ? (isSmallScreen ? 0.4 : 0.6) : (isSmallScreen ? 0.2 : 0.3)}/>
               </Worker>
             </div>
 
-            <p className="text-gray-600">{currentCertificado.description}</p>
           </div>
         )}
 
@@ -124,7 +122,7 @@ const Certificados: React.FC = () => {
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
                 <Viewer
                   fileUrl={currentCertificado.pdf}
-                  defaultScale={0.5}
+                  defaultScale={currentCertificado.id ? 1.0 : 0.5}
                 />
               </Worker>
             </div>
