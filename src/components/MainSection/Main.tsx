@@ -13,10 +13,9 @@ const Main = () => {
         <p className="text-slate-300 text-4xl mb-5">Olá, me chamo</p>
         <h1 className="text-6xl ">Orlean Sousa</h1>
         <hr/>
-        <p className="mt-10 text-xl text-slate-300 font-sans">Tenho 29 anos, iniciei minha jornada de programador aos 26, começando meus estudos 
-          no Curso tecnico em informatica no IFBA - Campos Jacobina, onde tive meu primeiro contato com a programação. La vi que amava tecnologias e decidir 
-          seguir a carreira de desenvolvedor Front-End. Atualmente estou cursando Analise e Desenvolvimento de Sistemas na UNIASSELVI, onde tive a oportunidade
-          de aprimorar meus conhecimentos em programação e desenvolvimento de software. meus hobbies são: Jogar video game, assistir series, filmes e ler livros.
+        <p className="mt-10 text-xl text-slate-300 font-sans">Tenho 29 anos, sou graduando em Analise e Desenvolvimento de Sistemas na UNIASSELVI, onde tenho a oportunidade de aprimorar meus conhecimentos em programação e desenvolvimento de software.  
+Iniciei minha jornada de programador aos 26 anos, começando meus estudos no Curso Técnico em Informática no IFBA - Campos Jacobina, onde tive meu primeiro contato com a programação, o que despertou meu interesse por tecnologias e me levou a optar pela carreira de desenvolvedor Front-End . 
+Meus hobbies são: Jogar video game, assistir series, filmes e ler livros.
         </p>
       </div> 
       <div className="lg:w-1/3 items-center ssm:w-fit">
