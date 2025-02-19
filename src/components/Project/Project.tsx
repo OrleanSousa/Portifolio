@@ -100,7 +100,7 @@ const Project = () => {
                                             font-semibold '>
                                                 Furniro
                                             </div>
-                                            <p>Tecnologias: React - Tailwind </p>
+                                            <p>Tecnologias: React - Tailwind - TypeScript </p>
                                             <p className='mt-2 text-slate-500 ssm:text-center'>
                                                 Projeto em desenvolvimento, com o objetivo de criar um e-commerce de moveis.
                                                 onde utilizamos o consumo de API para validar o login do usuario, ainda esta em construção.
