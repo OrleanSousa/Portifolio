@@ -28,7 +28,7 @@
   }
   
   .projectTitle {
-    @apply uppercase tracking-wide text-sm text-indigo-500 font-semibold;
+    @apply uppercase tracking-wide text-2xl text-indigo-500 font-semibold;
   }
   
   .projectTech {

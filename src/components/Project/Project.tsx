@@ -19,7 +19,7 @@ const Project = () => {
               <div className={styles.projectContent}>
                 <div className={styles.projectDetails}>
                   <div className={styles.projectTitle}>Pokedex API</div>
-                  <p>tecnologias: Javascript - CSS3</p>
+                  <p className='text-center'>tecnologias: Javascript - CSS3</p>
                   <p className={styles.projectTech}>
                     Projeto feito para treinar habilidades com Javascript e CSS3, no consumo de API. Api utilizada foi a PokeAPI.
                   </p>
@@ -36,7 +36,7 @@ const Project = () => {
               <div className={styles.projectContent}>
                 <div className={styles.projectDetails}>
                   <div className={styles.projectTitle}>Calculadora</div>
-                  <p>Tecnologias: Javascript - Css3 - HTML</p>
+                  <p className='text-center'>Tecnologias: Javascript - Css3 - HTML</p>
                   <p className={styles.projectTech}>
                     Objetivo do projeto foi treinar a lógica de programação com Javascript, e utilizar o mesmo para reforçar 
                     as chamadas de funções e manipulação de elementos HTML.
@@ -58,7 +58,7 @@ const Project = () => {
               <div className={styles.projectContent}>
                 <div className={styles.projectDetails}>
                   <div className={styles.projectTitle}>Todo - List</div>
-                  <p>Tecnologia: Javascript - CSS3 - HTML</p>
+                  <p className='text-center'>Tecnologia: Javascript - CSS3 - HTML</p>
                   <p className={styles.projectTech}>
                     Objetivo do projeto é trabalhar os conceitos de CRUD, e manipulação de elementos HTML com Javascript.
                     Utilizando de uma estilização simples para poder focar na lógica de programação.
@@ -76,7 +76,7 @@ const Project = () => {
               <div className={styles.projectContent}>
                 <div className={styles.projectDetails}>
                   <div className={styles.projectTitle}>Furniro</div>
-                  <p>Tecnologias: React - Tailwind - TypeScript</p>
+                  <p className='text-center'>Tecnologias: React - Tailwind - TypeScript</p>
                   <p className={styles.projectTech}>
                     Projeto em desenvolvimento, com o objetivo de criar um e-commerce de móveis.
                     Onde utilizamos o consumo de API para validar o login do usuário, ainda está em construção.
