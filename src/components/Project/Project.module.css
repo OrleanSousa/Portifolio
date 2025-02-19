@@ -1,0 +1,48 @@
+/* styles.module.css */
+.container {
+    @apply bg-indigo-800 m-5 ssm:m-20 max-w-full;
+  }
+  
+  .header {
+    @apply grid justify-items-center m-5 sm:m-10;
+  }
+  
+  .title {
+    @apply text-white text-2xl sm:text-3xl mt-5 sm:mt-10;
+  }
+  
+  .projectGrid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 p-5;
+  }
+  
+  .projectCard {
+    @apply bg-white mx-auto rounded-xl shadow-md overflow-hidden max-w-full ssm:max-w-2xl hover:animate-pulse;
+  }
+  
+  .projectContent {
+    @apply flex flex-col lg:flex-row lg:items-center;
+  }
+  
+  .projectDetails {
+    @apply p-5 ssm:p-8 ssm:items-center ssm:flex ssm:flex-col md:flex md:justify-center;
+  }
+  
+  .projectTitle {
+    @apply uppercase tracking-wide text-sm text-indigo-500 font-semibold;
+  }
+  
+  .projectTech {
+    @apply mt-2 text-slate-500 ssm:text-center;
+  }
+  
+  .projectImageContainer {
+    @apply md:shrink-0 p-5 ssm:flex ssm:justify-center;
+  }
+  
+  .projectImage {
+    @apply rounded-full w-[150px] h-[150px];
+  }
+  
+  .separator {
+    @apply my-5;
+  }
